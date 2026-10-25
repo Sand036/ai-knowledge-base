@@ -1,0 +1,28 @@
+# Phụ thuộc và build
+node_modules/
+.next/
+out/
+dist/
+
+# Biến môi trường: KHÔNG BAO GIỜ commit secret
+.env
+.env.*
+!.env.example
+
+# Hệ điều hành / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Test
+coverage/
+playwright-report/
+test-results/
+
+# Khác
+*.log
+.vercel
+
+# Supabase CLI
+supabase/.temp/
+supabase/.branches/

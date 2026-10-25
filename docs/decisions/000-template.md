@@ -1,0 +1,19 @@
+# ADR-000: <Tiêu đề quyết định>
+
+## Bối cảnh
+(1–2 câu: dự án cần gì, ràng buộc gì)
+
+## Các lựa chọn đã cân nhắc
+- A. ...
+- B. ...
+
+## Quyết định
+Chọn ...
+
+## Lý do
+- ...
+- ...
+- ...
+
+## Hệ quả
+(Đánh đổi gì? Việc gì giờ phải tự làm?)

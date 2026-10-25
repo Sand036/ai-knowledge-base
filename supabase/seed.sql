@@ -1,0 +1,2 @@
+-- Dữ liệu demo KHÔNG nhạy cảm (chạy khi `supabase db reset`).
+-- Bổ sung ở tuần sau.
