@@ -1,0 +1,27 @@
+name: db-tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  schema-smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Cài Supabase CLI trên máy chủ GitHub
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      # Dựng Supabase local (Docker có sẵn trên runner)
+      - run: supabase start
+
+      # Áp dụng mọi file trong supabase/migrations/ từ đầu
+      - run: supabase db reset
+
+      # Chạy 31 bài test; có test FAIL thì job báo đỏ
+      - run: >
+          psql "postgresql://postgres:postgres@127.0.0.1:54322/postgres"
+          -v ON_ERROR_STOP=1 -f tests/db/schema_smoke_test.sql
