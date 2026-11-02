@@ -6,9 +6,10 @@
 * **MVP**: chỉ hỗ trợ tài liệu **PDF và TXT**. DOCX nằm ngoài MVP và được xem xét ở giai đoạn sau.
 * **Priority**: `P0` = bắt buộc cho MVP; `P1` = quan trọng nhưng có thể hoàn thành sau MVP; `P2` = cải tiến/để giai đoạn sau.
 * **Giới hạn MVP mặc định**: file upload tối đa 10 MB; truy xuất ngữ nghĩa lấy tối đa 5 chunks; mật khẩu tối thiểu 8 ký tự.
-1. Epic A — Authentication \& Authorization
+## Epic A — Authentication \& Authorization
 Quản lý tài khoản, phiên đăng nhập và quyền truy cập dữ liệu.
-US-01: Đăng ký tài khoản — Priority: P0
+
+### US-01: Đăng ký tài khoản — Priority: P0
 User Story
 As a Visitor, I want to register an account so that I can use the AI Workspace system.
 
@@ -20,7 +21,7 @@ Acceptance Criteria
 4. Mật khẩu không được lưu dưới dạng văn bản thuần.
 5. Khi đăng ký thành công, người dùng được thông báo và có thể đăng nhập hoặc được chuyển vào ứng dụng theo luồng xác thực đã chọn.
 
-US-02: Đăng nhập và đăng xuất — Priority: P0
+### US-02: Đăng nhập và đăng xuất — Priority: P0
 User Story
 As a registered User, I want to log in and log out securely so that I can access my workspaces safely.
 
@@ -32,7 +33,7 @@ Acceptance Criteria
 4. Người dùng có thể đăng xuất.
 5. Sau khi đăng xuất, người dùng không thể tiếp tục sử dụng phiên đã kết thúc để truy cập tài nguyên được bảo vệ.
 
-US-03: Phân quyền truy cập dữ liệu — Priority: P0
+### US-03: Phân quyền truy cập dữ liệu — Priority: P0
 User Story
 As a User, I want the system to enforce access permissions so that other users cannot access my private data.
 
@@ -43,9 +44,10 @@ Acceptance Criteria
 3. Thay đổi ID trên URL hoặc API không được giúp người dùng vượt qua phân quyền.
 4. Người dùng không có quyền không thể xem tài liệu, lịch sử trò chuyện hoặc kết quả tìm kiếm của người khác.
 5. Quyền truy cập được kiểm tra tại server, không chỉ bằng cách ẩn nút trên giao diện.
-6. Epic B — Workspace Management
+## Epic B — Workspace Management
 Quản lý các kho tri thức chứa tài liệu của người dùng.
-US-04: Tạo workspace — Priority: P0
+
+### US-04: Tạo workspace — Priority: P0
 User Story
 As a User, I want to create a workspace so that I can organize documents by topic or purpose.
 
@@ -57,7 +59,7 @@ Acceptance Criteria
 4. Sau khi tạo thành công, workspace xuất hiện trong danh sách của người dùng.
 5. Người dùng không thể xem hoặc chỉnh sửa workspace nếu không có quyền.
 
-US-05: Xem và cập nhật workspace — Priority: P1
+### US-05: Xem và cập nhật workspace — Priority: P1
 User Story
 As a User, I want to view and update my workspace information so that I can manage my knowledge collections.
 
@@ -69,7 +71,7 @@ Acceptance Criteria
 4. Thay đổi được hiển thị sau khi cập nhật thành công.
 5. Người không có quyền chỉnh sửa không thể cập nhật thông tin.
 
-US-06: Xóa workspace — Priority: P1
+### US-06: Xóa workspace — Priority: P1
 User Story
 As a Workspace Owner, I want to delete a workspace so that I can remove collections that are no longer needed.
 
@@ -80,9 +82,10 @@ Acceptance Criteria
 3. Tài liệu, các đoạn văn bản đã xử lý, embeddings và dữ liệu liên quan phải được xử lý nhất quán.
 4. Dữ liệu đã xóa không được tiếp tục xuất hiện trong kết quả truy xuất của AI.
 5. Nếu thao tác xóa thất bại một phần, hệ thống phải có cơ chế ghi nhận và xử lý lại.
-6. Epic C — Document Management
+## Epic C — Document Management
 Tải lên, xem trạng thái xử lý và quản lý tài liệu.
-US-07: Tải tài liệu lên — Priority: P0
+
+### US-07: Tải tài liệu lên — Priority: P0
 User Story
 As a User, I want to upload documents to a workspace so that the AI can use their content to answer my questions.
 
@@ -95,7 +98,7 @@ Acceptance Criteria
 5. Sau khi tải lên, tài liệu có trạng thái ban đầu là Pending
 6. Nếu tải lên thất bại, hệ thống hiển thị thông báo phù hợp.
 
-US-08: Xem danh sách tài liệu và trạng thái xử lý — Priority: P0
+### US-08: Xem danh sách tài liệu và trạng thái xử lý — Priority: P0
 User Story
 As a User, I want to view uploaded documents and their processing statuses so that I know which documents are ready for AI queries.
 
@@ -107,7 +110,7 @@ Acceptance Criteria
 4. Giao diện thể hiện trạng thái đang tải, danh sách trống và lỗi khi cần.
 5. Trạng thái được cập nhật khi quá trình xử lý thay đổi.
 
-US-09: Xem chi tiết tài liệu — Priority: P1
+### US-09: Xem chi tiết tài liệu — Priority: P1
 User Story
 As a User, I want to view document details so that I can inspect its metadata and processing status.
 
@@ -118,7 +121,7 @@ Acceptance Criteria
 3. Chỉ người có quyền mới được xem chi tiết tài liệu.
 4. Thông tin nội bộ nhạy cảm hoặc khóa API không được hiển thị.
 
-US-10: Xóa tài liệu — Priority: P0
+### US-10: Xóa tài liệu — Priority: P0
 User Story
 As a User, I want to delete a document so that outdated or unnecessary information is no longer used by the AI.
 
@@ -130,7 +133,7 @@ Acceptance Criteria
 4. Tài liệu đã xóa không được sử dụng trong các truy vấn mới.
 5. Hệ thống ghi nhận lỗi và cho phép xử lý lại nếu thao tác xóa chưa hoàn tất.
 
-US-11: Xử lý lại tài liệu thất bại — Priority: P1
+### US-11: Xử lý lại tài liệu thất bại — Priority: P1
 User Story
 As a User, I want to retry processing a failed document so that I can make it available to the AI without uploading it again.
 
@@ -141,9 +144,10 @@ Acceptance Criteria
 3. Quá trình retry không tạo chunks hoặc embeddings trùng lặp.
 4. Lỗi mới được ghi nhận để hỗ trợ chẩn đoán.
 5. Hệ thống giới hạn retry hợp lý để tránh lặp vô hạn.
-6. Epic D — Document Processing \& Semantic Search
+## Epic D — Document Processing \& Semantic Search
 Chuyển tài liệu thành dữ liệu mà AI có thể truy xuất.
-US-12: Trích xuất văn bản và chia chunks — Priority: P0
+
+### US-12: Trích xuất văn bản và chia chunks — Priority: P0
 User Story
 As a System, I want to extract and split document content into manageable chunks so that the AI can retrieve relevant information efficiently.
 
@@ -155,7 +159,7 @@ Acceptance Criteria
 4. Tài liệu rỗng, lỗi định dạng hoặc không đọc được phải được đánh dấu thất bại.
 5. Các chunks phải giữ đúng liên kết với workspace và tài liệu tương ứng.
 
-US-13: Tạo embeddings — Priority: P0
+### US-13: Tạo embeddings — Priority: P0
 User Story
 As a System, I want to generate vector embeddings for document chunks so that semantically related content can be found.
 
@@ -167,7 +171,7 @@ Acceptance Criteria
 4. Lỗi từ embedding provider được ghi nhận và xử lý an toàn.
 5. Chỉ những chunks đã xử lý thành công mới được đưa vào tìm kiếm.
 
-US-14: Tìm kiếm ngữ nghĩa — Priority: P0
+### US-14: Tìm kiếm ngữ nghĩa — Priority: P0
 User Story
 As a User, I want the system to retrieve semantically relevant document chunks so that I can find information even when my wording differs from the source text.
 
@@ -178,9 +182,10 @@ Acceptance Criteria
 3. Kết quả bị giới hạn trong workspace được chọn và phạm vi quyền của người dùng.
 4. Tài liệu đã xóa hoặc chưa xử lý xong không xuất hiện trong kết quả.
 5. Nếu không có kết quả phù hợp, hệ thống trả về trạng thái không tìm thấy bằng chứng thích hợp.
-6. Epic E — AI Question Answering (RAG)
+## Epic E — AI Question Answering (RAG)
 Đây là chức năng trọng tâm của dự án: kết hợp truy xuất tài liệu với mô hình ngôn ngữ để trả lời câu hỏi.
-US-15: Đặt câu hỏi cho AI — Priority: P0
+
+### US-15: Đặt câu hỏi cho AI — Priority: P0
 User Story
 As a User, I want to ask natural-language questions about my workspace so that I can obtain answers from my documents quickly.
 
@@ -194,7 +199,7 @@ Acceptance Criteria
 6. Giao diện hiển thị trạng thái đang xử lý, kết quả hoặc lỗi.
 7. Nếu dịch vụ AI gặp sự cố hoặc vượt giới hạn sử dụng, hệ thống thông báo phù hợp.
 
-US-16: Hiển thị trích dẫn nguồn — Priority: P0
+### US-16: Hiển thị trích dẫn nguồn — Priority: P0
 User Story
 As a User, I want to see citations for AI-generated answers so that I can verify the information against the original documents.
 
@@ -207,7 +212,7 @@ Acceptance Criteria
 5. Nguồn trích dẫn được đối chiếu với các chunks thực tế ở phía server, không chỉ tin vào nội dung do LLM tự tạo.
 6. Không được hiển thị nguồn mà người dùng không có quyền truy cập.
 
-US-17: Xử lý câu hỏi không đủ bằng chứng — Priority: P0
+### US-17: Xử lý câu hỏi không đủ bằng chứng — Priority: P0
 User Story
 As a User, I want the AI to tell me when my documents do not contain enough evidence so that I do not rely on unsupported answers.
 
@@ -219,7 +224,7 @@ Acceptance Criteria
 4. Khi bằng chứng yếu hoặc mâu thuẫn, câu trả lời cần thể hiện sự không chắc chắn phù hợp.
 5. Giao diện có thể gợi ý người dùng diễn đạt lại câu hỏi hoặc bổ sung tài liệu.
 
-US-18: Xem lịch sử trò chuyện — Priority: P1
+### US-18: Xem lịch sử trò chuyện — Priority: P1
 User Story
 As a User, I want to view previous conversations so that I can revisit questions and answers about my documents.
 
@@ -231,7 +236,7 @@ Acceptance Criteria
 4. Người dùng không thể xem lịch sử của người khác.
 5. Nguồn trích dẫn được xử lý phù hợp nếu tài liệu nguồn bị xóa hoặc quyền truy cập thay đổi.
 
-US-19: Đánh giá câu trả lời AI — Priority: P2
+### US-19: Đánh giá câu trả lời AI — Priority: P2
 User Story
 As a User, I want to provide feedback on AI answers so that answer quality can be evaluated and improved.
 
@@ -242,9 +247,10 @@ Acceptance Criteria
 3. Feedback được liên kết với câu trả lời tương ứng.
 4. Người dùng không thể chỉnh sửa feedback của người khác.
 5. Hệ thống có thể tổng hợp feedback để đánh giá chất lượng sản phẩm.
-6. Epic F — Workspace Collaboration
+## Epic F — Workspace Collaboration
 Các chức năng này phù hợp khi muốn mở rộng dự án từ kho tri thức cá nhân thành nền tảng làm việc nhóm.
-US-20: Mời thành viên vào workspace — Priority: P2
+
+### US-20: Mời thành viên vào workspace — Priority: P2
 User Story
 As a Workspace Owner, I want to invite other users to my workspace so that we can share knowledge and collaborate.
 
@@ -256,7 +262,7 @@ Acceptance Criteria
 4. Hệ thống ngăn lời mời trùng lặp không cần thiết.
 5. Chỉ người có quyền mới được mời thành viên.
 
-US-21: Quản lý vai trò thành viên — Priority: P2
+### US-21: Quản lý vai trò thành viên — Priority: P2
 User Story
 As a Workspace Owner, I want to assign roles to workspace members so that each person has the appropriate level of access.
 
@@ -267,8 +273,9 @@ Acceptance Criteria
 3. Chỉ người có quyền quản lý mới được thay đổi vai trò.
 4. Thành viên không thể tự nâng quyền của mình.
 5. Hệ thống bảo vệ quyền sở hữu, tránh vô tình xóa hoặc hạ quyền Owner cuối cùng.
-6. Epic G — Monitoring, Evaluation \& Cost Control
-US-22: Theo dõi pipeline xử lý tài liệu — Priority: P1
+## Epic G — Monitoring, Evaluation \& Cost Control
+
+### US-22: Theo dõi pipeline xử lý tài liệu — Priority: P1
 User Story
 As a Developer or Administrator, I want to monitor document-processing jobs so that I can identify and resolve failures.
 
@@ -280,7 +287,7 @@ Acceptance Criteria
 4. Tài liệu lỗi có thể được xác định và xử lý lại theo quyền phù hợp.
 5. Các lỗi hệ thống được phân biệt với lỗi do tài liệu không hợp lệ.
 
-US-23: Đánh giá chất lượng RAG — Priority: P1
+### US-23: Đánh giá chất lượng RAG — Priority: P1
 User Story
 As a Developer, I want to evaluate the RAG pipeline using a test dataset so that I can measure retrieval and answer quality before releasing the application.
 
@@ -292,7 +299,7 @@ Acceptance Criteria
 4. Kết quả đánh giá được lưu hoặc xuất để so sánh giữa các lần thay đổi.
 5. Báo cáo nêu rõ giới hạn của bộ dữ liệu và phương pháp đánh giá.
 
-US-24: Theo dõi độ trễ và chi phí AI — Priority: P1
+### US-24: Theo dõi độ trễ và chi phí AI — Priority: P1
 User Story
 As a System Administrator, I want to monitor AI usage and request latency so that I can control costs and maintain acceptable performance.
 
@@ -303,37 +310,7 @@ Acceptance Criteria
 3. Chi phí được ước tính theo bảng giá và mô hình đã cấu hình.
 4. Không ghi log thông tin xác thực hoặc dữ liệu nhạy cảm không cần thiết.
 
-
-
-US-25: Hiển thị trạng thái loading, empty và error — Priority: P0
-User Story
-As a User, I want clear feedback during every important operation so that I understand what the system is doing and how to recover from errors.
-
-Acceptance Criteria
-
-1. Các thao tác bất đồng bộ có trạng thái loading phù hợp.
-2. Danh sách trống có hướng dẫn hành động tiếp theo.
-3. Lỗi được diễn đạt rõ ràng, không để lộ thông tin nội bộ.
-4. Các thao tác có thể thử lại sẽ cung cấp lựa chọn retry.
-5. Giao diện hoạt động tốt trên desktop và mobile.
-
-
-
-US-26: Tìm kiếm và lọc danh sách tài liệu — Priority: P2
-User Story
-As a User, I want to search and filter documents so that I can quickly find the files I need.
-
-Acceptance Criteria
-
-1. Người dùng có thể tìm kiếm tài liệu theo tên tệp.
-2. Người dùng có thể lọc theo trạng thái hoặc loại tệp.
-3. Kết quả chỉ chứa tài liệu người dùng được phép truy cập.
-4. Hệ thống hiển thị trạng thái khi không có kết quả.
-5. Việc tìm kiếm và lọc không làm thay đổi dữ liệu gốc.
-
-
-
-US-27: Giới hạn tần suất và quota sử dụng AI — Priority: P0
+### US-25: Giới hạn tần suất và quota sử dụng AI — Priority: P0
 User Story
 As a System Administrator, I want to enforce request rate limits and usage quotas so that I can prevent abuse and control AI service costs.
 
@@ -346,7 +323,30 @@ Acceptance Criteria
 5. Bộ đếm được kiểm tra ở server; người dùng không thể vượt giới hạn bằng cách gọi API trực tiếp hoặc thay đổi giao diện.
 6. Hệ thống ghi nhận user, thời điểm và loại giới hạn bị chạm, nhưng không ghi API key hoặc dữ liệu bí mật.
 7. Các giới hạn 10 yêu cầu/phút và 100 yêu cầu/ngày có thể được cấu hình qua biến môi trường hoặc cấu hình server mà không cần sửa logic nghiệp vụ.
-8. Epic H — User Experience
+## Epic H — User Experience
 
+## Epic H — User Experience
 
+### US-26: Hiển thị trạng thái loading, empty và error — Priority: P0
+User Story
+As a User, I want clear feedback during every important operation so that I understand what the system is doing and how to recover from errors.
 
+Acceptance Criteria
+
+1. Các thao tác bất đồng bộ có trạng thái loading phù hợp.
+2. Danh sách trống có hướng dẫn hành động tiếp theo.
+3. Lỗi được diễn đạt rõ ràng, không để lộ thông tin nội bộ.
+4. Các thao tác có thể thử lại sẽ cung cấp lựa chọn retry.
+5. Giao diện hoạt động tốt trên desktop và mobile.
+
+### US-27: Tìm kiếm và lọc danh sách tài liệu — Priority: P2
+User Story
+As a User, I want to search and filter documents so that I can quickly find the files I need.
+
+Acceptance Criteria
+
+1. Người dùng có thể tìm kiếm tài liệu theo tên tệp.
+2. Người dùng có thể lọc theo trạng thái hoặc loại tệp.
+3. Kết quả chỉ chứa tài liệu người dùng được phép truy cập.
+4. Hệ thống hiển thị trạng thái khi không có kết quả.
+5. Việc tìm kiếm và lọc không làm thay đổi dữ liệu gốc.
